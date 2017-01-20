@@ -28,3 +28,8 @@ CSV.foreach('db/books.csv', headers: :first_row) do |row|
     end
 end
 
+admin = User.where(email: 'test@example.com')
+unless admin.present?
+    User.create(name: 'Admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project')
+end
+
