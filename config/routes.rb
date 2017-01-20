@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tags, except: :show
   resources :books do
     resources :taggings, only: [:new, :edit, :create, :update, :destroy]
