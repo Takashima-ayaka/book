@@ -5,30 +5,32 @@
   </div>
 <% end %>
 
+<h2 class="sub-header">Book</h2>
+
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>著書:</strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong>Published on:</strong>
+  <strong>出版日:</strong>
   <%= @book.published_on %>
 </p>
 
 <p>
-  <strong>Showing:</strong>
+  <strong>発売:</strong>
   <%= @book.showing %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>価格:</strong>
   <%= @book.price %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to '編集', edit_book_path(@book), class: 'btn btn-default' %>
+<%= link_to '戻る', books_path, class: 'btn btn-default' %>

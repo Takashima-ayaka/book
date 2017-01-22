@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h2 class="sub-header">Tag</h2>
+
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @tag.name %>
 </p>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<%= link_to '編集', edit_tag_path(@tag), class: 'btn btn-default' %>
+<%= link_to '戻る', tags_path, class: 'btn btn-default' %>
