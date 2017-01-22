@@ -24,8 +24,8 @@
         <tr>
           <td><%= book.title %></td>
           <td><%= book.author %></td>
-          <td><%= book.published_on %></td>
-          <td><%= book.showing %></td>
+          <td><%= book.published_on.try(:strftime, '%Y年%m月') %></td>
+          <td><%= book.showing? ? '可能' : '不可' %></td>
           <td><%= book.price %></td>
           <td><%= link_to '詳細', book %></td>
           <td><%= link_to '編集', edit_book_path(book) %></td>

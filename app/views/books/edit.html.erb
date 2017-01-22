@@ -1,6 +1,6 @@
 <h2>Book 編集</h2>
 
-<%= render 'form', book: @book %>
+<%= render 'form', book: @book, title: '更新' %>
 
-<%= link_to '編集', @book, class: 'btn btn-default' %>
+<%= link_to '詳細', @book, class: 'btn btn-default' %>
 <%= link_to '戻る', books_path, class: 'btn btn-default' %>
