@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'abouts/index'
+
   get 'products/index'
   root to: 'products#index'
 
