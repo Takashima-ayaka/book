@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rails-controller-testing' #追加
   gem 'devise'
   gem 'devise-i18n'
+  gem 'rubocop', require: false
 end
 
 group :development do
