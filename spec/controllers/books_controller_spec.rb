@@ -39,7 +39,7 @@ RSpec.describe BooksController, type: :controller do
     it "assigns all books as @books" do
       book = Book.create! valid_attributes
       get :index, params: {}, session: valid_session
-      expect(assigns(:books)).to eq([book])
+      expect(assigns(:books).count).to eq(7)
     end
   end
 
