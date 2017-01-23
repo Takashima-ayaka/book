@@ -12,6 +12,12 @@ ja:
       tagging:
         book_id: 本
         tag_id: タグ
+      user:
+        name: 名前
+        mail: メールアドレス
+        role: 役職
+        password: パスワード
+        password_confirmation: パスワード(確認用)
 
   admin: '管理者'
   general: '一般'
