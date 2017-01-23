@@ -13,3 +13,6 @@ ja:
         book_id: 本
         tag_id: タグ
 
+  admin: '管理者'
+  general: '一般'
+
