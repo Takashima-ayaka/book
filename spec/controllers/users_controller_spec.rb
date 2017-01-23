@@ -24,7 +24,7 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { email: 'general@example.com', password: 'password', password_confirmation: 'password' }
   }
 
   let(:invalid_attributes) {
@@ -35,12 +35,15 @@ RSpec.describe UsersController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  
+  let(:admin_user) { User.all.first }
+  before(:each) { sign_in admin_user }
 
   describe "GET #index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index, params: {}, session: valid_session
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users).count).to eq(2)
     end
   end
 
@@ -87,30 +90,19 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "with invalid params" do
-      it "assigns a newly created but unsaved user as @user" do
-        post :create, params: {user: invalid_attributes}, session: valid_session
-        expect(assigns(:user)).to be_a_new(User)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, params: {user: invalid_attributes}, session: valid_session
-        expect(response).to render_template("new")
-      end
-    end
   end
 
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { email: 'general@example.com', password: 'password2', password_confirmation: 'password' }
       }
 
       it "updates the requested user" do
         user = User.create! valid_attributes
         put :update, params: {id: user.to_param, user: new_attributes}, session: valid_session
         user.reload
-        skip("Add assertions for updated state")
+        expect(user.email).to eq new_attributes[:email]
       end
 
       it "assigns the requested user as @user" do
@@ -126,19 +118,6 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "with invalid params" do
-      it "assigns the user as @user" do
-        user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: invalid_attributes}, session: valid_session
-        expect(assigns(:user)).to eq(user)
-      end
-
-      it "re-renders the 'edit' template" do
-        user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: invalid_attributes}, session: valid_session
-        expect(response).to render_template("edit")
-      end
-    end
   end
 
   describe "DELETE #destroy" do
