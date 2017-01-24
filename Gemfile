@@ -21,6 +21,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -35,7 +38,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails' #追加
   gem 'rails-controller-testing' #追加
-  gem 'devise'
   gem 'devise-i18n'
   gem 'rubocop', require: false
 end
