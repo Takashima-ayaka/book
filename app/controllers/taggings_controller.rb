@@ -16,6 +16,7 @@ class TaggingsController < ApplicationController
   # GET /taggings/new
   def new
     @tagging = Tagging.new
+    @book = Book.find(params[:book_id])
   end
 
   # GET /taggings/1/edit

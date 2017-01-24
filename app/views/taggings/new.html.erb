@@ -1,5 +1,22 @@
-<h1>New Tagging</h1>
+<h2 class="sub-header">New Tagging</h2>
 
-<%= render 'form', tagging: @tagging %>
+<p>
+  <strong>タイトル:</strong>
+  <%= @book.title %>
+</p>
 
-<%= link_to 'Back', taggings_path %>
+<p>
+  <strong>著書:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>出版日:</strong>
+  <%= @book.published_on.try(:strftime, '%Y年%m月') %>
+</p>
+
+<p>
+  <%= render 'form', tagging: @tagging, title: '登録' %>
+</p>
+
+<%= link_to '戻る', books_path, class: 'btn btn-default' %>
