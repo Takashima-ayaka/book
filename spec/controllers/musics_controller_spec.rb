@@ -39,7 +39,7 @@ RSpec.describe MusicsController, type: :controller do
     it "assigns all musics as @musics" do
       music = Music.create! valid_attributes
       get :index, params: {}, session: valid_session
-      expect(assigns(:musics).count).to eq(1)
+      expect(assigns(:musics).count).to eq(4)
     end
   end
 
