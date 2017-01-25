@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order =Order.new
     @product = Product.find(params[:product_id])
     render layout: 'front'
   end
