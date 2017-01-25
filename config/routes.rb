@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :musics
   get 'abouts/index'
 
   get 'products/index'
