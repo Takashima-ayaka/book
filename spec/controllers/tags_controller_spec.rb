@@ -39,7 +39,7 @@ RSpec.describe TagsController, type: :controller do
     it "assigns all tags as @tags" do
       tag = Tag.create! valid_attributes
       get :index, params: {}, session: valid_session
-      expect(assigns(:tags).count).to eq(6)
+      expect(assigns(:tags).count).to eq(1)
     end
   end
 
