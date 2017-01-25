@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
       format.html { redirect_to products_index_url, notice: 'Order was successfully created.' }
       format.json { render :show, status: :created, location: @order }
     end
-  rescue
+  rescue ActiveRecord::RecordInvalid
     respond_to do |format|
       format.html { render :new }
       format.json { render json: @order.errors, status: :unprocessable_entity }
