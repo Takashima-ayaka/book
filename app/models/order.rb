@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   has_many :order_details
   after_commit :send_order_mail, on: :create
   
-  def checkout(product_id)
+  def checkout(cart)
     cart.line_items.each do |line_item|
       order_details.build(product_id: line_item.product_id, quantity: line_item.quantity)
     end
