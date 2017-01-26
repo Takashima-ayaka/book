@@ -33,6 +33,18 @@ class OrdersManagementController < ApplicationController
         end
     end
     
+    # def cansel
+    #     respond_to do |format|
+    #         if @order.cansel!
+    #             format.html { redirect_to orders_management_index_url, notice: 'Order was successfully updated.' }
+    #             format.json { render :index, status: :ok, location: orders_management_index_path }
+    #         else
+    #             format.html { render :edit }
+    #             format.json { render json: @order.errors, status: :unprocessable_entity }
+    #         end
+    #     end
+    # end
+    
 private
 
     def set_order

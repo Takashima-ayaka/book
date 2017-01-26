@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   resources :orders_management, only: [:index, :edit] do
     put :confirm_payment
     put :deliver
