@@ -19,3 +19,4 @@
 </table>
 
 <%= link_to '購入を続ける', products_index_path, class: 'btn btn-default' %>
+<%= link_to 'カートを空にする', cart_path(id: @cart.id), method: :delete, class: 'btn btn-default' %>
