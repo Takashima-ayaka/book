@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders_management, only: [:index]
   resources :orders, only: [:new, :create]
   resources :musics
   get 'abouts/index'
