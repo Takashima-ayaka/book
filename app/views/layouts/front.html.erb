@@ -14,6 +14,7 @@
           <div class="header clearfix">
             <nav>
               <ul class="nav nav-pills pull-right">
+                <li id="cart_total_price"><%== cart_status_link(@cart) %></li>
                 <li role="presentation" class="active"><a href="/">Home</a></li>
                 <li role="presentation" class=""><a href="/abouts/index">About</a></li>
               </ul>
@@ -28,6 +29,7 @@
             </div>
           <% end %>
 
+          <%= javascript_include_tag "line_items" %>
           <div class="jumbotron">
             <h1>F-B Shop</h1>
             <p class="lead">This site is the test shop of my favorite books.</p>

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :line_items
+  resources :line_items, only: [:create] do
+    member do
+      post :add_cart_item
+    end
+  end
+    
   resources :carts
   resources :orders_management, only: [:index, :edit] do
     put :confirm_payment
