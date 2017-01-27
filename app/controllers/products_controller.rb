@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   def index
     @product = Product.ransack(params[:q])
     products = @product.result.visible
-    @books = Book.visible.all
-    @musics = Music.visible.all
+    @books = products.books
+    @musics = products.musics
     render layout: 'front'
   end
 end

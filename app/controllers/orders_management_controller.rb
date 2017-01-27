@@ -4,7 +4,7 @@ class OrdersManagementController < ApplicationController
     
     def index
         conditions = params[:q] || { status_in: Order.statuses.values }
-        @orders = Order.all
+        @order = Order.ransack(conditions)
         @orders = @order.result.includes(:user).to_a.uniq
     end
     
