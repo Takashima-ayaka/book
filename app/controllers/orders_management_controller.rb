@@ -55,7 +55,6 @@ class OrdersManagementController < ApplicationController
     
     def async_deliver
         @order.deliver!
-        
         render template: "orders_management/async_process"
     end
     
