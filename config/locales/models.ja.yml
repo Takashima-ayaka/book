@@ -28,6 +28,7 @@ ja:
       order:
         shipping_address: 配送先
         status: 状況
+        user_id: ユーザ名
     enum:
       order:
         status:
