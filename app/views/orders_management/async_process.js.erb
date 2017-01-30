@@ -1,12 +1,8 @@
 var targetStatus = $("#order_table tbody tr#" + "<%= @order.id %>" + "td.status");
-alert (1);
 var targetLink = $("#order_table tbody tr#" + "<%= @order.id %>" + "td.link");
-alert (2);
 var link;
-alert (3);
 
 $(targetStatus).html("<%= I18n.t @order.status, scope: 'activerecord.enum.order.status' %>");
-alert (4);
 
 <% if @order.order_accepted? %>
 alert (5);
