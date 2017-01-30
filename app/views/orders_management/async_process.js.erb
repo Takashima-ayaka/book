@@ -5,19 +5,11 @@ var link;
 $(targetStatus).html("<%= I18n.t @order.status, scope: 'activerecord.enum.order.status' %>");
 
 <% if @order.order_accepted? %>
-alert (5);
     link = '<%= link_to "入金確認", async_confirm_payment_orders_management_path(@order), remote: true, method: :post, class: "btn btn-default" %>';
-alert (6);
 <% elsif @order.paid? %>
-alert (7);
     link = '<%= link_to "配送", async_deliver_orders_management_path(@order), remote: true, method: :post, class: "btn btn-default" %>';
-alert (8);
 <% else %>
-alert (9);
     link = '';
-alert (10);
 <% end %>
-alert (11);
 
 $(targetLink).html(link);
-alert (12);
