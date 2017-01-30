@@ -1,6 +1,6 @@
 class OrdersManagementController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_order, only: [:edit, :confirm_payment, :async_confirm_payment, :async_deliver]
+    before_action :set_order, only: [:edit, :confirm_payment, :deliver, :async_confirm_payment, :async_deliver]
     
     def index
         conditions = params[:q] || { status_in: Order.statuses.values }
