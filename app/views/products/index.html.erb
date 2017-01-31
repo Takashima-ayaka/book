@@ -65,7 +65,7 @@
             <h3><%= music.title %></h3>
             <p><%= music.author %></p>
             <p><%= music.published_on %></p>
-            <p><%= music.play_time %></p>
+            <p><%= music.play_time %>分</p>
             <p><%= number_to_currency(music.try(:price), precision: 0, unit: "円") %>
             <%= link_to 'カート追加', '#', class: 'btn btn-default', onclick: "return add_cart_item(#{music.id});" %></p>
         <% end %>

@@ -2,7 +2,6 @@ class OrdersManagementController < ApplicationController
     before_action :authenticate_user!
     before_action :set_order, only: [:edit, :confirm_payment, :deliver, :async_confirm_payment, :async_deliver]
     
-      
     def async_confirm_payment
         @order.confirm_payment!
         render template: "orders_management/async_process"
@@ -57,7 +56,7 @@ class OrdersManagementController < ApplicationController
     #         end
     #     end
     # end
-  
+    
 private
 
     def set_order
